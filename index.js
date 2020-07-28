@@ -60,6 +60,7 @@ Flags:
     -i, --input,    Path to folder with .wem files
     -h, --help,     Print this help screen
     -v, --version,  Print version to console
+        --verbose,  Print additional information to the console
 `
         );
         return;
@@ -118,7 +119,7 @@ Flags:
         if(hasFlag(FLAGS.VERBOSE))
             console.log(`${filename} becomes ${realname}`);
         if(!hasFlag(FLAGS.SAFE_MODE)) {
-            fs.renameSync(filepath, getFlagData(FLAGS.INPUT_FOLDER) + "/" + realname);
+            fs.renameSync(filepath, getFlagData(FLAGS.INPUT_FOLDER) + "/" + realname + ".wem");
         }
         // if(DEBUG) {
         //     console.log(`Would have renamed ${filepath} to ${getFlagData(FLAGS.INPUT_FOLDER) + "/" + realname}`);
